@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truth Table Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">  
+</head>
+
+<body>
+  <h1>Truth Table Generator</h1>
+  
+  <div class="container">
+    <div class="input-area">
+      <label for="expression">Enter a logical statement using natural language:</label>
+      <input type="text" id="expression" placeholder="If it rains then the grass gets wet">
+      <button id="generate-btn">Generate Truth Table</button>
+      <div id="error-message"></div>
+    </div>
+    
+    <div id="result-area">
+      <div id="parsed-expression"></div>
+      <div id="concept-map"></div>
+      <div id="truth-table-container"></div>
+    </div>
+  </div>
+  
+  <div class="instructions">
+    <h2>How to Use</h2>
+    <p>Enter a logical statement in plain English. The generator will identify key concepts, map them to logical variables (P, Q, R), and create a complete truth table showing all possible outcomes.</p>
+    
+    <div class="tabs">
+      <button class="tab active" onclick="openTab(event, 'examples-tab')">Examples</button>
+      <button class="tab" onclick="openTab(event, 'operators-tab')">Supported Operators</button>
+      <button class="tab" onclick="openTab(event, 'about-tab')">About</button>
+    </div>
+    
+    <div id="examples-tab" class="tab-content active">
+      <h3>Example Statements:</h3>
+      <ul class="example-list">
+        <li>"If it rains then the grass gets wet"</li>
+        <li>"The car starts or the battery is dead but not both"</li>
+        <li>"Studying is equivalent to passing the exam"</li>
+        <li>"Working hard implies success"</li>
+        <li>"If Alice is present and Bob is absent, then Charlie is happy"</li>
+      </ul>
+      <p>Click on any example to try it:</p>
+      <div id="example-buttons">
+        <button class="example-btn">If it rains then the grass gets wet</button>
+        <button class="example-btn">The car starts or the battery is dead but not both</button>
+        <button class="example-btn">Studying is equivalent to passing the exam</button>
+      </div>
+    </div>
+    
+    <div id="operators-tab" class="tab-content">
+      <h3>Supported Logical Operators:</h3>
+      <ul>
+        <li><strong>AND</strong>: "and", "both"</li>
+        <li><strong>OR</strong>: "or", "either", "alternatively"</li>
+        <li><strong>NOT</strong>: "not", "isn't", "won't", "don't", etc.</li>
+        <li><strong>XOR</strong>: "exclusive or", "either but not both", "mutually exclusive"</li>
+        <li><strong>IMPLIES</strong>: "if...then", "implies", "leads to", "results in", "causes"</li>
+        <li><strong>IFF</strong> (if and only if): "if and only if", "equivalent", "iff", "is equivalent to"</li>
+      </ul>
+    </div>
+    
+    <div id="about-tab" class="tab-content">
+      <h3>About This Tool</h3>
+      <p>This Truth Table Generator uses natural language processing to convert English sentences into logical expressions. It can handle up to three distinct concepts (mapped to P, Q, and R) and generates complete truth tables for all possible combinations.</p>
+      <p>Perfect for students learning propositional logic, this tool helps visualize how different logical operators work together to determine the truth value of complex statements.</p>
+    </div>
+  </div>
+  
+  <footer>
+    © 2025 Truth Table Generator | A tool for logical reasoning
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
